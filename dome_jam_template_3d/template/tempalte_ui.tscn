@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c8kkbt7l34g0f"]
+
+[node name="TempalteUI" type="CanvasLayer" unique_id=1141745601]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1090711645]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 79.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[b]360º UI"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1706620078]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -76.0
+offset_right = 524.0
+offset_bottom = -24.0
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="." unique_id=323165222]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -494.0
+offset_top = -64.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0

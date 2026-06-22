@@ -2,6 +2,24 @@
 
 [ext_resource type="Script" uid="uid://ifdjt6xtasyo" path="res://template/template_camera_3d.gd" id="1_c5tpj"]
 [ext_resource type="Script" uid="uid://7m0ekawqrbcw" path="res://addons/godot360/src/camera360.gd" id="2_cxpsq"]
+[ext_resource type="PackedScene" uid="uid://c8kkbt7l34g0f" path="res://template/tempalte_ui.tscn" id="3_cxpsq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_olab2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cxpsq"]
+viewport_path = NodePath("UIViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a5dd"]
+resource_local_to_scene = true
+render_priority = 127
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = SubResource("ViewportTexture_cxpsq")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gojnm"]
 sky_top_color = Color(0.59000003, 0.7608334, 1, 1)
@@ -82,19 +100,38 @@ top_radius = 0.25
 [node name="TemplateScene" type="Node3D" unique_id=1804121356]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=79429004]
+cull_mask = 786431
 script = ExtResource("1_c5tpj")
 
 [node name="Camera360" type="Camera3D" parent="Camera3D" unique_id=1661449560 node_paths=PackedStringArray("subviewport")]
 transform = Transform3D(1, 1.4901161e-08, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-cull_mask = 524288
+cull_mask = 786432
 script = ExtResource("2_cxpsq")
 fovx = 180.0
 lens = 7
-subviewport = NodePath("SubViewport")
+render_layer = 20
+subviewport = NodePath("360Viewport")
 metadata/_custom_type_script = "uid://7m0ekawqrbcw"
 
-[node name="SubViewport" type="SubViewport" parent="Camera3D/Camera360" unique_id=2124509217]
+[node name="360Viewport" type="SubViewport" parent="Camera3D/Camera360" unique_id=2124509217]
 canvas_cull_mask = 4294443008
+size = Vector2i(1080, 1080)
+
+[node name="UIScreen" type="MeshInstance3D" parent="Camera3D/Camera360" unique_id=1990068161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+layers = 262144
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("QuadMesh_olab2")
+surface_material_override/0 = SubResource("StandardMaterial3D_1a5dd")
+
+[node name="UIViewport" type="SubViewport" parent="." unique_id=290657818]
+transparent_bg = true
+gui_embed_subwindows = true
+canvas_cull_mask = 4294443007
+size = Vector2i(1080, 1080)
+
+[node name="TempalteUi" parent="UIViewport" unique_id=308442846 instance=ExtResource("3_cxpsq")]
 
 [node name="Test (Can be Removed)" type="Node3D" parent="." unique_id=892379595]
 
