@@ -104,7 +104,6 @@ cull_mask = 786431
 script = ExtResource("1_c5tpj")
 
 [node name="Camera360" type="Camera3D" parent="Camera3D" unique_id=1661449560 node_paths=PackedStringArray("subviewport")]
-transform = Transform3D(1, 1.4901161e-08, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 cull_mask = 786432
 script = ExtResource("2_cxpsq")
 fovx = 180.0
@@ -118,7 +117,7 @@ canvas_cull_mask = 4294443008
 size = Vector2i(1080, 1080)
 
 [node name="UIScreen" type="MeshInstance3D" parent="Camera3D/Camera360" unique_id=1990068161]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
 layers = 262144
 cast_shadow = 0
 gi_mode = 0
@@ -131,7 +130,7 @@ gui_embed_subwindows = true
 canvas_cull_mask = 4294443007
 size = Vector2i(1080, 1080)
 
-[node name="TempalteUi" parent="UIViewport" unique_id=308442846 instance=ExtResource("3_cxpsq")]
+[node name="TemplateUi" parent="UIViewport" unique_id=308442846 instance=ExtResource("3_cxpsq")]
 
 [node name="Test (Can be Removed)" type="Node3D" parent="." unique_id=892379595]
 

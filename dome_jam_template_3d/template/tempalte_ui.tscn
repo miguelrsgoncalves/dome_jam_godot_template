@@ -1,6 +1,37 @@
 [gd_scene format=3 uid="uid://c8kkbt7l34g0f"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1cwj"]
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4cxl"]
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
 [node name="TempalteUI" type="CanvasLayer" unique_id=1141745601]
+
+[node name="Panel4" type="Panel" parent="." unique_id=307099877]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w1cwj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1090711645]
 offset_left = 24.0
@@ -12,6 +43,7 @@ theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
 text = "[b]360º UI"
 fit_content = true
+scroll_active = false
 autowrap_mode = 0
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1706620078]
@@ -36,3 +68,50 @@ offset_right = -24.0
 offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="Panel2" type="Panel" parent="." unique_id=276321081]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q4cxl")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=232743144]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = 15.0
+offset_right = 26.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[b]Center"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="." unique_id=516353096]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -106.0
+grow_horizontal = 0
+grow_vertical = 2

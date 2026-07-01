@@ -101,8 +101,11 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	var dome_transform: Transform3D = Transform3D(global_transform.basis.rotated(global_transform.basis.x, PI / 2.0), global_transform.origin)
+	
 	for camera in cameras:
-		camera.global_transform = global_transform
+		camera.global_transform = dome_transform
+	
 	if num_cameras >= 2:
 		cameras[1].rotate_object_local(Vector3.UP, PI/2)
 	if num_cameras >= 3:
